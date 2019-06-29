@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+.navbar{
+    background-color:#d22f2d;
+    a{
+        color:white;
+    }
+}
+.logo_super{
+    height: 40px;
+    width: 40px;
+
+}
+.navbar-brand{
+    font-family: 'Pacifico', cursive;
+    font-size:2em;
+}
+
+.contato{
+    margin-right: 50px;
+}
+.info_user{
+    color:white;
+    button{
+
+    }
+}
+.icon_user{
+    width: 3em;
+    height: 3em;
+}
+
+.login_user{
+    color:rgb(250, 250, 250);
+    .botao_menu{
+        background-color:#d22f2d;
+        color: white;
+        border: 0.4px solid black;
+    }
+    ul{
+        
+        form{
+            .login_facebook{
+                img{
+                    background-color:white;
+                }
+            }
+            .login_google{
+                color:black;
+                background-color:rgb(196, 204, 214);
+            }
+        }
+        .entrar {
+            background-color: #d22f2d;
+        }
+        button{
+            font-size: 15px;
+            color: white;
+        }
+        width:  250px;
+    }
+}
+
+footer{
+    background-color:#d22f2d;
+    a{
+        color:white;
+    }
+}

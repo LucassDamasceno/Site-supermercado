@@ -1,0 +1,87 @@
+<nav class="navbar navbar-expand-lg  fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#"><img class="logo_super" src="../assets/logo_supermercado.png" alt="">
+         <span>    supermercado</span> </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Página inicial
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">sobre nós</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">serviços</a>
+                </li>
+                <li class="nav-item contato">
+                    <a class="nav-link" href="#">contato</a>
+                </li>
+                <li class="nav-item row info_user" *ngIf="usuarioLogado; else entrar">
+                    <img src="../assets/user.png" alt="" class="icon_user"><br>
+                    <div class="">
+                        <div>bem vindo(a)</div>
+                        <div> Lucas Damasceno</div>
+                    </div>
+                    <button class="btn btn-outline-secondary dropdown-toggle"></button>
+                </li>
+                <ng-template #entrar>
+                    <li class="dropdown login_user">
+                        <button type="button" id="dropdownMenu1" data-toggle="dropdown"
+                            class="botao_menu btn dropdown-toggle">Login </button>
+                        <ul class="dropdown-menu dropdown-menu-right mt-2 animated fadeIn">
+                            <li class="px-3 py-2">
+                                <form class="form" role="form">
+                                    <div class="form-group ">
+                                        <button type="button" class="entrar btn btn-primary btn-block" [routerLink]="(['/login'])"> Entrar</button>
+                                    </div>
+
+                                    <div class="form-group text-center"> ou</div>
+                                    <div class="form-group ">
+                                        <button type="button" class="btn btn-primary btn-block login_facebook" (click)="loginFacebook()"><img
+                                                src="../assets/facebook.png" alt="" > login com Facebook</button>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-primary btn-block login login_google"  (click)="loginGoogle()" ><img
+                                                src="../assets/google.png" alt="" > login com google</button>
+                                    </div>
+
+                                    <div class="text-center">
+                                       <span class="text-center">Não possui conta? </span><br><a href="">Cadastre-se</a>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ng-template>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<!-- Footer -->
+<footer class="py-5">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+</footer>
+
+
+
+
+
+
+<!-- <div *ngFor="let item of dados ">
+        <h3>{{ item["login"] }}</h3>
+    <h3>{{ item["senha"] }}</h3>
+</div>
+
+<button (click)="verificar()">Verificar dados</button> -->

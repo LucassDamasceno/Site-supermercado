@@ -1,0 +1,52 @@
+<ngx-ui-loader></ngx-ui-loader>
+<div class="container-fluid">
+  <div class="d-flex justify-content-center h-100">
+    <div class="card">
+      <div class="card-header  text-center">
+        <h3>Entrar</h3>
+      </div>
+      <div class="card-body text-center">
+        <form #form="ngForm" autocomplete="off" (submit)="autenticar(form)">
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-user iconEmail">@</i></span>
+            </div>
+            <input type="text" class="form-control" name="login" #login="ngModel" [(ngModel)]="usuario.login"
+              placeholder="username">
+          </div>
+
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-key"><img src="../../assets/key-2x.png"
+                    alt="icon name"></i></span>
+            </div>
+            <input type="password" class="form-control" name="senha" #senha="ngModel" [(ngModel)]="usuario.senha"
+              placeholder="password">
+          </div>
+
+          <div class="row align-items-center remember">
+            <input type="checkbox">Lembrar senha
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Login" class="btn  login_btn">
+          </div>
+          <div class="btn-social">
+              <h5>Ou entre com 
+                <span class="google" (click)="loginGoogle()"><img src="../../assets/google.png" alt="google"></span>
+                <span class="facebook"(click)="loginFacebook()"> <img src="../../assets/facebook.png" alt="facebook"></span>
+              </h5>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+
+        <div class="d-flex justify-content-center links">
+          Crie sua conta agora<a [routerLink]="['/sign-up']">Sign Up</a>
+        </div>
+        <div class="d-flex justify-content-center">
+          <a href="#">Esqueceu sua senha?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

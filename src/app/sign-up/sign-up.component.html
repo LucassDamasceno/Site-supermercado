@@ -1,0 +1,62 @@
+<ngx-ui-loader></ngx-ui-loader>
+<div class="container-fluid">
+  <div class="d-flex justify-content-center h-100">
+    <div class="card">
+      <div class="card-header">
+        <h3>Criar conta</h3>
+      </div>
+      <div class="card-body">
+        <!-- ***************************************************************** -->
+        <form autocomplete="off" (submit)="onSubmit()" [formGroup]="formulario">
+          <div class="form-group"  >
+            <label for="login"> Email </label>
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                  <span class="input-group-text iconEmail" id="inputGroupPrepend3">@</span>
+              </div>
+              <input type="text" class="form-control" [ngClass]="aplicaCssErro('login')"  formControlName="login" placeholder="Email">
+              <div *ngIf="verificaValidTouched('login')" class="invalid-feedback">
+                  Digite um email válido!
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="senha">Senha</label>
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><span class="oi" data-glyph="key"><img src="../../assets/key-2x.png" alt="icon name"></span></span>
+              </div>
+              <input type="password" class="form-control" [ngClass]="aplicaCssErro('senha')" formControlName="senha" placeholder="senha">
+              <div *ngIf="this.formulario.get('senha').invalid && this.formulario.get('senha').touched" class="invalid-feedback">
+                A senha deve conter no mínino 6 caracteres
+            </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmSenha">Confirmar senha</label>
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><img src="../../assets/key-2x.png" alt="icon name"></span>
+              </div>
+              <input type="password" class="form-control" [ngClass]="aplicaCssErro('confirmSenha')"  formControlName="confirmSenha" placeholder="confirmar senha">
+              <div *ngIf="this.formulario.get('confirmSenha').invalid" class="invalid-feedback">
+                Senha não confere!
+            </div>
+            </div>
+          </div>
+          <div class="form-group  bt_login ">
+            <input type="submit" value="cadastrar"  [disabled]="this.formulario.invalid" class="btn btn-primary ">
+          </div>
+          <div class="card-footer">
+            <div class="d-flex justify-content-center links">
+              Já possui conta?<a [routerLink]="['/login']">Entre</a>
+            </div>
+          </div>
+        </form>
+        <!-- ************************************************************************* -->
+      </div>
+    </div>
+  </div>
+</div>
