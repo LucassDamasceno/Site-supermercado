@@ -4,6 +4,7 @@ import { Usuario } from './models/usuario';
 import { Component } from '@angular/core';
 import { AngularFirestore } from "@angular/fire/firestore"
 import { Observable } from 'rxjs';
+import { promise } from 'protractor';
 
 
 @Component({
@@ -15,32 +16,38 @@ import { Observable } from 'rxjs';
 
 export class AppComponent {
   title = 'SistemaLogin';
-  dados: Usuario[] = [];
-  usuarioLogado:any;
+  usuario: Usuario = {
+    login: "",
+    senha: "",
+    nome: ""
+  };
+  userName: any;
+  usuarioLogado: any;
 
   constructor(private afs: AngularFirestore,
     private authService: AuthService,
     private angularFireAuth: AngularFireAuth,
-  ) { 
-  
+  ) {
+    this.inforUser();
   }
 
 
   loginGoogle() {
-    this.authService.loginGoogle().then(value =>{
+    this.authService.loginGoogle().then(value => {
     })
   }
 
   loginFacebook() {
-    this.authService.loginFacebook().then(value =>{
+    this.authService.loginFacebook().then(value => {
     })
   }
 
   ngOnInit(): void {
-    this.authService.getUser().subscribe((user)=>{
-      if(user){
+   
+    this.authService.getUser().subscribe((user) => {
+      if (user) {
         this.usuarioLogado = true
-      }else{
+      } else {
         this.usuarioLogado = false
       }
     })
@@ -48,6 +55,14 @@ export class AppComponent {
 
   deslogar() {
     this.authService.logout();
+  }
+
+  inforUser() {
+      this.authService.getUser().subscribe(info => {
+        this.userName = info.displayName;
+        this.usuario.nome = info.displayName;
+        console.log(this.userName)
+      });
   }
 
 }

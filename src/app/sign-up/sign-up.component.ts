@@ -43,6 +43,7 @@ export class SignUpComponent implements OnInit {
 
 
   ngOnInit() {
+    this.ngxLoader.start();
     this.formulario = this.formBuilder.group({
       login: ['lucasdds15@gmail.com', [Validators.required, Validators.email,]],
       senha: ['88680543', [Validators.required, Validators.minLength(6), this.senhaValid]],
@@ -50,6 +51,10 @@ export class SignUpComponent implements OnInit {
     })
 
   }
+  ngAfterViewInit(): void {
+    this.ngxLoader.stop();
+  }
+
   senhaValid(control: FormControl) {
     const field = control.root.get('confirmSenha')
     if (field !== null) {

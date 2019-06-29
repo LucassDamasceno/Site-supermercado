@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg  fixed-top">
+<nav class="navbar navbar-expand-lg  fixed-top" (click)="inforUser()">
     <div class="container">
         <a class="navbar-brand" href="#"><img class="logo_super" src="../assets/logo_supermercado.png" alt="">
          <span>    supermercado</span> </a>
@@ -22,19 +22,31 @@
                 <li class="nav-item contato">
                     <a class="nav-link" href="#">contato</a>
                 </li>
-                <li class="nav-item row info_user" *ngIf="usuarioLogado; else entrar">
+                <li class="nav-item row info_user dropdown" *ngIf="usuarioLogado; else entrar">
                     <img src="../assets/user.png" alt="" class="icon_user"><br>
                     <div class="">
-                        <div>bem vindo(a)</div>
-                        <div> Lucas Damasceno</div>
+                        <div class="bemVindo">bem vindo(a)</div>
+                        <div > {{usuario.nome}}</div>
+                        
                     </div>
-                    <button class="btn btn-outline-secondary dropdown-toggle"></button>
+                    <button class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown"></button>
+            
+                    <div class="dropdown-menu dropdown-menu-right mt-2 "> 
+                        <div class=" text-center">
+                            <div class="form-group item">
+                                minha Conta
+                            </div>
+                            <div class="form-group item" (click)="deslogar()">
+                                sair
+                            </div>
+                        </div>
+                    </div>
                 </li>
                 <ng-template #entrar>
                     <li class="dropdown login_user">
                         <button type="button" id="dropdownMenu1" data-toggle="dropdown"
                             class="botao_menu btn dropdown-toggle">Login </button>
-                        <ul class="dropdown-menu dropdown-menu-right mt-2 animated fadeIn">
+                        <ul class="dropdown-menu dropdown-menu-right mt-2 animated flipInX">
                             <li class="px-3 py-2">
                                 <form class="form" role="form">
                                     <div class="form-group ">
@@ -52,7 +64,7 @@
                                     </div>
 
                                     <div class="text-center">
-                                       <span class="text-center">Não possui conta? </span><br><a href="">Cadastre-se</a>
+                                       <span class="text-center">Não possui conta? </span><br><a href="" [routerLink]="['/sign-up']">Cadastre-se</a>
                                     </div>
                                 </form>
                             </li>

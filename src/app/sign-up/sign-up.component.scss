@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 .container-fluid{
-    background-image: url('http://www.cronosolucoes.com.br/wp-content/uploads/2018/10/futuristic-technology-background-hd-overlay-115379004773cf6twdsmd.png');
+   // background-image: url('http://www.cronosolucoes.com.br/wp-content/uploads/2018/10/futuristic-technology-background-hd-overlay-115379004773cf6twdsmd.png');
     background-size: cover;
     background-repeat: no-repeat;
     height:47em;
@@ -11,11 +11,20 @@
 }
 
 .card{
-height: 515px;
-margin-top: auto;
-margin-bottom: auto;
-width: 400px;
-background-color: rgba(0,0,0,0.5) !important;
+    height: 515px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    // background-color: rgba(0,0,0,0.5) !important;
+    .card-header{
+        background-color: #d22f2d;
+    }
+    .card-footer{
+        color:white;
+        .links{
+            color:black;
+            }
+    }
 }
 
 .social_icon span{
@@ -41,7 +50,7 @@ top: -45px;
 
 .input-group-prepend span{
 width: 50px;
-background-color: rgb(142, 172, 172);
+background-color:#d22f2d;
 color: black;
 border:0 !important;
 }
@@ -75,9 +84,7 @@ color: black;
 background-color: white;
 }
 
-.links{
-color: white;
-}
+
 
 .links a{
 margin-left: 4px;

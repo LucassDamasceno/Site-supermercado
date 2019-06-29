@@ -14,6 +14,7 @@ export class AuthService {
   usuarioLogado = new EventEmitter<any>();
   user: any;
 
+
   constructor(private rota: Router,
     public afAuth: AngularFireAuth,
     private ngxService: NgxUiLoaderService,
@@ -58,6 +59,7 @@ export class AuthService {
       var provider = new auth.GoogleAuthProvider();
       this.afAuth.auth.signInWithPopup(provider).then(function (result) {
         if (result.user) {
+          console.log(result.user.displayName)
           resolve(true)
         } else {
           resolve(false)

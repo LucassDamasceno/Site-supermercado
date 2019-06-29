@@ -16,9 +16,14 @@ export class HomeComponent implements OnInit {
     private ngxLoader:NgxUiLoaderService
   ) { }
   ngOnInit() {
+    this.ngxLoader.start();
     this.authService.getAuth().then((result)=>{
       console.log("usuário logado: " +result);
     })
+  }
+  
+  ngAfterViewInit(): void {
+    this.ngxLoader.stop();
   }
 
   async deslogar(){

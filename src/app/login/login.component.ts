@@ -34,7 +34,6 @@ export class LoginComponent implements OnInit {
     this.authService.loginGoogle().then(value =>{
       if(value) this.router.navigate(['home'])
     })
-
   }
 
   loginFacebook() {
@@ -59,5 +58,8 @@ export class LoginComponent implements OnInit {
   register() {
     this.router.navigate(['sign-up'])
   }
+
+
+
 
 }

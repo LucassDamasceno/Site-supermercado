@@ -1,6 +1,6 @@
 
 .container-fluid{
-    background-image: url('https://cdn.pixabay.com/photo/2016/06/13/05/47/background-1453697__340.jpg');
+   // background-image: url('https://cdn.pixabay.com/photo/2016/06/13/05/47/background-1453697__340.jpg');
    // background-color: rgb(85, 87, 248);
     background-size: cover;
     background-repeat: no-repeat;
@@ -13,14 +13,20 @@
     margin-top: auto;
     margin-bottom: auto;
     width: 400px;
-    background-color: rgb(173, 166, 143);
+    //background-color: rgb(173, 166, 143);
     .card-header {
         color:white;
-        background-color:#697179 ;
+        background-color:#d22f2d ;
     }
     .card-footer{
-        color:white;
-        background-color:#697179  ;
+        //color:white;
+        //background-color:#d22f2d  ;
+    }
+    .card-body{
+        .iconEmail{
+            font-weight: bold;
+            font-size: 1.1em;
+        }   
     }
 }
 
@@ -44,7 +50,7 @@ top: -45px;
 
 .input-group-prepend span{
 width: 50px;
-background-color: rgb(142, 172, 172);
+background-color: #d22f2d;
 color: black;
 border:0 !important;
 }
@@ -65,8 +71,8 @@ margin-right: 5px;
 }
 
 .login_btn{
-color: black;
-background-color:  rgb(142, 172, 172);
+color:white;
+background-color:#d22f2d;
 width: 100px;
 }
 
@@ -77,10 +83,6 @@ background-color: white;
 
 .links a{
 margin-left: 4px;
-}
-.iconEmail{
-    font-weight: bold;
-    font-size: 1.1em;
 }
 
 .btn-social{
